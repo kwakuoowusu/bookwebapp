@@ -1,3 +1,6 @@
 # bookwebapp
 
-A work in progress website to track information on things such as how many books you have read, progress on a book and much more
+A work in progress website to track your progress on every day tasks, from homework, to working out, and watching tv shows
+---
+#TODO
+[]Finish General Appearance of Website
