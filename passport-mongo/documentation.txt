@@ -1,0 +1,8 @@
+documentation. 
+
+To run mongodb localally navigate to the mongo directory in the command line
+
+go to the binary folder andf run mongo.exe -dbpath="../data/db"
+
+
+to run the web server, go to thhe server directory and run node ./bin/www
