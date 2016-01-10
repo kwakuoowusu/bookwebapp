@@ -13,42 +13,24 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(passport){
 
-	/* GET login page. */
-	router.get('/', function(req, res) {
-		console.log("hi")
-    	// Display the Login page with any flash message, if any
-  	res.sendFile(path.join(__dirname+'/index.html'));
-	});
+	
 
 	/* Handle Login POST */
-	router.post('/login', passport.authenticate('login', {
-		successRedirect: '/home',
+	router.post('/', passport.authenticate('login', {
+		/*successRedirect: '',
 		failureRedirect: '/',
-		failureFlash : true  
+		failureFlash : true */ 
 	}));
 
-	/* GET Registration Page */
-	router.get('/signup', function(req, res){
-		res.render('register',{message: req.flash('message')});
-	});
-
+	
 	/* Handle Registration POST */
-	router.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/home',
-		failureRedirect: '/signup',
-		failureFlash : true  
+	router.post('/', passport.authenticate('signup', {
+		/*successRedirect: '../public/index.html',
+		failureRedirect: '/',
+		failureFlash : true */
 	}));
 
-	/* GET Home Page */
-	router.get('/home', isAuthenticated, function(req, res){
-		res.render('home', { user: req.user });
-	});
-
-	/* Handle Logout */
-	router.get('/signout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-	});
+	
 
 	return router;
 }
